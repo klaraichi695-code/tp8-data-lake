@@ -1,0 +1,1 @@
+"""Package consumers - Consumers du pipeline."""

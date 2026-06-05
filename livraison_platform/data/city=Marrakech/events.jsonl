@@ -1,0 +1,3 @@
+{"event_type": "order_created", "order_id": "ORD-20260604-C707", "city": "Marrakech", "zone": "Gueliz", "courier_id": "CRR-19", "amount": 175.0, "status": "created", "event_time": "2026-06-04T23:38:50Z", "write_time": "2026-06-04T23:38:50Z", "partition": 0}
+{"event_type": "order_dispatched", "order_id": "ORD-20260604-C707", "city": "Marrakech", "zone": "Gueliz", "courier_id": "CRR-19", "amount": 175.0, "status": "dispatched", "event_time": "2026-06-04T23:38:52Z", "write_time": "2026-06-04T23:38:52Z", "partition": 0}
+{"event_type": "delivery_failed", "order_id": "ORD-20260604-C707", "city": "Marrakech", "zone": "Gueliz", "courier_id": "CRR-19", "amount": 175.0, "status": "failed", "event_time": "2026-06-04T23:38:52Z", "write_time": "2026-06-04T23:38:52Z", "partition": 0}

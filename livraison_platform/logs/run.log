@@ -1,0 +1,38 @@
+2026-06-05 00:38:49,962 [INFO] main :: === Démarrage Séance 8 — Plateforme livraison ===
+2026-06-05 00:38:49,980 [INFO] consumer_a :: [A] démarrage — partitions : [0, 2]
+2026-06-05 00:38:50,002 [INFO] consumer_b :: [B] démarrage — partitions : [1, 3]
+2026-06-05 00:38:50,006 [INFO] main :: Partitions A=[0, 2] B=[1, 3]
+2026-06-05 00:38:50,007 [INFO] main :: --- Phase 1 : prise de commandes ---
+2026-06-05 00:38:50,008 [INFO] order_service :: Commande créée : ORD-20260604-C097 (ville=Fes, montant=245.00)
+2026-06-05 00:38:50,015 [INFO] order_service :: Événement publié → partition=3 offset=0
+2026-06-05 00:38:50,068 [INFO] order_service :: Commande créée : ORD-20260604-F109 (ville=Casablanca, montant=890.50)
+2026-06-05 00:38:50,081 [INFO] order_service :: Événement publié → partition=1 offset=0
+2026-06-05 00:38:50,137 [INFO] order_service :: Commande créée : ORD-20260604-116E (ville=Rabat, montant=120.00)
+2026-06-05 00:38:50,144 [INFO] order_service :: Événement publié → partition=2 offset=0
+2026-06-05 00:38:50,207 [INFO] order_service :: Commande créée : ORD-20260604-5094 (ville=Fes, montant=550.00)
+2026-06-05 00:38:50,216 [INFO] order_service :: Événement publié → partition=3 offset=1
+2026-06-05 00:38:50,270 [INFO] order_service :: Commande créée : ORD-20260604-C707 (ville=Marrakech, montant=175.00)
+2026-06-05 00:38:50,274 [INFO] order_service :: Événement publié → partition=0 offset=0
+2026-06-05 00:38:50,346 [INFO] order_service :: Commande créée : ORD-20260604-4285 (ville=Tanger, montant=310.00)
+2026-06-05 00:38:50,360 [INFO] order_service :: Événement publié → partition=3 offset=2
+2026-06-05 00:38:50,428 [INFO] order_service :: Commande créée : ORD-20260604-5C64 (ville=Casablanca, montant=430.00)
+2026-06-05 00:38:50,468 [INFO] order_service :: Événement publié → partition=1 offset=1
+2026-06-05 00:38:50,556 [INFO] order_service :: Commande créée : ORD-20260604-F0A3 (ville=Rabat, montant=95.00)
+2026-06-05 00:38:50,599 [INFO] order_service :: Événement publié → partition=2 offset=1
+2026-06-05 00:38:50,753 [WARNING] order_service :: Validation échouée : Ville inconnue : 'InvalidCity'. Villes autorisées : {'Casablanca', 'Marrakech', 'Tanger', 'Rabat', 'Fes'}
+2026-06-05 00:38:51,020 [WARNING] order_service :: Validation échouée : Le montant doit être strictement positif, reçu : -50.0
+2026-06-05 00:38:51,155 [INFO] main :: --- Phase 2 : simulation des cycles de vie ---
+2026-06-05 00:38:51,190 [INFO] producer :: [PRODUCER] order_cancelled → order=ORD-20260604-C097 city=Fes partition=3 offset=3
+2026-06-05 00:38:51,310 [INFO] producer :: [PRODUCER] order_dispatched → order=ORD-20260604-F109 city=Casablanca partition=1 offset=2
+2026-06-05 00:38:51,325 [INFO] producer :: [PRODUCER] delivery_failed → order=ORD-20260604-F109 city=Casablanca partition=1 offset=3
+2026-06-05 00:38:51,465 [INFO] producer :: [PRODUCER] order_created → order=ORD-20260604-116E city=Rabat partition=2 offset=2
+2026-06-05 00:38:51,537 [INFO] producer :: [PRODUCER] order_confirmed → order=ORD-20260604-116E city=Rabat partition=2 offset=3
+2026-06-05 00:38:51,623 [INFO] producer :: [PRODUCER] order_prepared → order=ORD-20260604-116E city=Rabat partition=2 offset=4
+2026-06-05 00:38:51,724 [INFO] producer :: [PRODUCER] order_dispatched → order=ORD-20260604-116E city=Rabat partition=2 offset=5
+2026-06-05 00:38:51,814 [INFO] producer :: [PRODUCER] order_delivered → order=ORD-20260604-116E city=Rabat partition=2 offset=6
+2026-06-05 00:38:52,004 [INFO] producer :: [PRODUCER] order_dispatched → order=ORD-20260604-5094 city=Fes partition=3 offset=4
+2026-06-05 00:38:52,031 [INFO] producer :: [PRODUCER] delivery_failed → order=ORD-20260604-5094 city=Fes partition=3 offset=5
+2026-06-05 00:38:52,157 [INFO] producer :: [PRODUCER] order_dispatched → order=ORD-20260604-C707 city=Marrakech partition=0 offset=1
+2026-06-05 00:38:52,271 [INFO] producer :: [PRODUCER] delivery_failed → order=ORD-20260604-C707 city=Marrakech partition=0 offset=2
+2026-06-05 00:38:52,419 [INFO] producer :: [PRODUCER] order_cancelled → order=ORD-20260604-4285 city=Tanger partition=3 offset=6
+2026-06-05 00:38:52,533 [INFO] main :: Pipeline en cours — attente 30s…

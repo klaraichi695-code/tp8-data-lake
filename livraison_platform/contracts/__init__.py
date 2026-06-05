@@ -1,0 +1,1 @@
+"""Package contracts - Contrats de données pour la plateforme de livraison."""
